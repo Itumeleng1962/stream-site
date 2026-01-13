@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #18181b; /* Richer dark background */
+  color: #f8f8fa; /* Off-white for main text */
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: hsl(var(--primary));
+  margin-bottom: 0.5em;
+  transition: color 0.3s;
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: hsl(var(--accent));
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+section,
+.main-section,
+.card-section,
+.profile-section,
+.my-list-section,
+.news-section,
+.podcast-section,
+.category-section,
+.content-section,
+.browse-languages-container,
+.watch-providers,
+.table-section {
+  background: linear-gradient(120deg, var(--background-dark, #18181b) 60%, var(--primary-color, #232326) 100%) !important;
+}
+
+.content-masonry,
+.content-card,
+.content-card.series {
+  background: linear-gradient(120deg, var(--background-dark, #18181b) 60%, var(--primary-color, #232326) 100%) !important;
+}
+
+.category-grid {
+  background: linear-gradient(120deg, var(--background-dark, #18181b) 60%, var(--primary-color, #232326) 100%) !important;
+}
+
+/* Subtle gray for muted text only */
+.muted, .text-muted {
+  color: #c2c3c4;
+}
+
+button, .btn, .cta-button {
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)) 90%);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+button:hover, .btn:hover, .cta-button:hover {
+  background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--primary)) 90%);
+  box-shadow: 0 4px 18px 0 rgba(0,0,0,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+a, .nav-link {
+  color: hsl(var(--accent));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover, .nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 7% 10%; /* #18181b */
+    --foreground: 240 20% 98%; /* #f8f8fa */
+    --card: 240 6% 16%; /* #232326 */
+    --card-foreground: 240 20% 98%;
+    --primary: 359 68% 37%; /* Roof Terracotta */
+    --primary-foreground: 240 20% 98%;
+    --secondary: 18 13% 42%; /* Russett */
+    --secondary-foreground: 240 20% 98%;
+    --accent: 44 100% 51%; /* Gold #ffd700 */
+    --accent-foreground: 240 20% 98%;
+    --border: 44 100% 51%; /* Gold */
+    --input: 240 6% 16%;
+    --muted: 240 6% 22%;
+    --muted-foreground: 220 3% 76%;
+    --radius: 0.5rem;
+    --sidebar-background: 210 6% 8%;
+    --sidebar-foreground: 220 3% 76%;
+    --sidebar-primary: 359 68% 37%;
+    --sidebar-primary-foreground: 220 3% 76%;
+    --sidebar-accent: 18 13% 42%;
+    --sidebar-accent-foreground: 220 3% 76%;
+    --sidebar-border: 18 13% 42%;
+    --sidebar-ring: 359 68% 37%;
+  }
+  .dark {
+    --background: 210 6% 8%;
+    --foreground: 220 3% 76%;
+    --card: 18 13% 42%;
+    --card-foreground: 220 3% 76%;
+    --popover: 210 6% 8%;
+    --popover-foreground: 220 3% 76%;
+    --primary: 359 68% 37%;
+    --primary-foreground: 220 3% 76%;
+    --secondary: 18 13% 42%;
+    --secondary-foreground: 220 3% 76%;
+    --muted: 210 6% 16%;
+    --muted-foreground: 220 3% 76%;
+    --accent: 359 68% 37%;
+    --accent-foreground: 220 3% 76%;
+    --destructive: 359 68% 37%;
+    --destructive-foreground: 220 3% 76%;
+    --border: 18 13% 42%;
+    --input: 18 13% 42%;
+    --ring: 359 68% 37%;
+    --chart-1: 359 68% 37%;
+    --chart-2: 18 13% 42%;
+    --chart-3: 210 6% 8%;
+    --chart-4: 220 3% 76%;
+    --chart-5: 0 0% 100%;
+    --sidebar-background: 210 6% 8%;
+    --sidebar-foreground: 220 3% 76%;
+    --sidebar-primary: 359 68% 37%;
+    --sidebar-primary-foreground: 220 3% 76%;
+    --sidebar-accent: 18 13% 42%;
+    --sidebar-accent-foreground: 220 3% 76%;
+    --sidebar-border: 18 13% 42%;
+    --sidebar-ring: 359 68% 37%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
